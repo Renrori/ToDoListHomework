@@ -1,0 +1,40 @@
+.toDoListContainer{
+    width:600px;
+    margin: 5px;
+    padding: 10px;
+
+
+    
+}
+.inputBanner{
+    margin:5px 10px;
+    text-align: center;
+    font-size: 20px;
+}
+.input{
+    margin:10px 10px;
+    text-align: center;
+}
+.tbInput{
+    width:250px;
+    margin: 0px 70px 0px 70px;
+}
+.btnInput{
+   margin:0px 20px 0px 20px;
+}
+
+.toDoList{
+    line-height: 2;
+ border: 2px solid black;
+}
+.listCount>p{text-align: center;
+    
+}
+.delList{
+    margin:0px 5px 0px 0px ;
+    float: right;
+    
+}
+.center{
+    text-align: center;
+}
