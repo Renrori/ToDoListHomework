@@ -1,8 +1,9 @@
 //註冊新增事項按鈕事件
-var addBtn = document.getElementById('btnInput')
+var addBtn = document.getElementById('btnInput');
 addBtn.addEventListener("click",Keyin)
-var tbInp = document.getElementById('tbInput')
+var tbInp = document.getElementById('tbInput');
 // tbInp.addEventListener("click",KeyReady)
+var countUl = document.querySelectorAll('.ul')
 
 function Keyin(){
     if (tbInp.value === ""){
@@ -10,13 +11,23 @@ function Keyin(){
     }
     else{
         AddList();
+        CountList();
     }
 }
 
+function CountList(){
+    var targetP=document.getElementById('toDoListCount')
+    var tempcount = 0;
+    countUl.forEach(function(ulElement){
+        tempcount += ulElement.childElementCount;
+    });
+    targetP.innerHTML="還有"+tempcount +"件待辦事項";
+    
+}
 //新增LI項目按鈕的方法
 function AddList(){
     // var inpBtn =document.getElementById('tbInput');
-    var targetUl=document.getElementById('listUL')
+    var targetUl=document.getElementById('listUL');
     
     
     //為LI填入按鈕與內容
@@ -32,12 +43,14 @@ function AddList(){
 
     //為按鈕註冊刪除事件
     addBtn.addEventListener("click",DelList);
+    
 }
 
 
 function DelList(){ 
     var listNode=this.parentNode;
     listNode.remove();
+    CountList();
 }
 
 
